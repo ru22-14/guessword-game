@@ -1,10 +1,10 @@
 """
 Word guessing game.
-Choose a letter for the user to guess the word.
-The user has 8 attempts to guess the word and win the game.
-After each attempt, it displays thr right guesses, wrong guesses
+Choose a word for the user to guess it.
+The user has total 8 attempts to guess the word and win the game.
+After each attempt, it displays the right guesses, wrong guesses
 and number of attempts left.
-If the user loose it displays the right word.
+If the user looses the game, the right word will be displayed.
 """
 
 import random
@@ -16,8 +16,19 @@ words = ['strawberry', 'eclipse', 'chandelier', 'ketchup', 'toothpaste',
          'whisk', 'cupcake', 'sleepingbag', 'bruise', 'Fog', 'crust',
          'battery']
 
+print("\t\t\t\t Welcome to the Word Guess Game\n")
+print("\t\t To Play the Game please choose a letter and press enter!\n") 
+print("\t\t\t\t\t Have Fun\n")       
+
 
 def word_guess_game():
+    """
+    The function will run and choose a random word from the list above.Then 
+    it will display the word in spaces and will ask the user to choose a letter 
+    and give it as a guess.Total number of attempts will be counted contniously
+    untill the word is been guessed or all the guesses are wrong. At the end,
+     the result will be displayed.
+    """
     # choose a random word
     guess = random.choice(words)
     # guess = "happy"
