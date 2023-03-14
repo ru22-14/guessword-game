@@ -17,30 +17,4 @@ words = ['strawberry', 'eclipse', 'chandelier', 'ketchup', 'toothpaste',
          'battery']
 
 
-def word_guess_game():
-    # choose a random word
-    # guess = random.choice(words)
-    guess = "happy"
-
-    # display the word to the user '- - - - -'
-    display_word = ''
-    for letter in guess:
-        display_word += '_ '
-    print(display_word)    
-    # display the total number of attempts
-    
-    # guess a letter
-    # display if the letter is correct
-    # correct
-    # display if the letter is wrong
-    # the letter is not in the word
-    # replace the letter with '-'
-    # decrease number of attempts when the letter is wrong
-    # check if win
-    # congratulations you win, exit
-    # check if loose
-    # sorry you loose and display the letter, exit
-    pass
-
-
-word_guess_game()             
+             
