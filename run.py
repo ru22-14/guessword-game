@@ -19,12 +19,12 @@ words = ['strawberry', 'eclipse', 'chandelier', 'ketchup', 'toothpaste',
 
 def word_guess_game():
     # choose a random word
-    # guess = random.choice(words)
-    guess = "happy"
+    guess = random.choice(words)
+    # guess = "happy"
     attempts = 8
     correct_guess = []
 
-    while attempts >= 0:
+    while attempts >= 1:
         # display the word to the user as '- - - - -'
         display_word = ''
         for letter in guess:
@@ -34,27 +34,27 @@ def word_guess_game():
                 display_word += '_ '    
             display_word += ' '
         print(display_word.strip())
-    # display the total number of attempts
+        # display the total number of attempts
 
         print(f'You have {attempts} attempts left')
-    # choose a letter
+        # choose a letter
         make_a_choice = input('choose a letter: ')
+        # replace the correct letter with '_'    
         correct_guess.append(make_a_choice)
-    # display if the letter is correct/ wrong
+        # display if the letter is correct/ wrong
         if make_a_choice in guess:
             print('Correct letter')
         else:
             print("This letter is not in the Word")
+        # decrease number of attempts when the letter is wrong        
         attempts -= 1
-
-    # replace the letter with '-'
-    # decrease number of attempts when the letter is wrong
-    # check if win
-    # congratulations you win, exit
-    # check if loose
-    # sorry you loose and display the letter, exit
-
-    pass
+        # check if win
+        for letter in guess:
+            if letter not in correct_guess:
+                break
+            return print("Congratulations, You win")
+    print("Sorry, You loose the Game")
+    print(f"The Word is {guess}.")       
 
 
 word_guess_game()
