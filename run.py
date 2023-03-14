@@ -17,8 +17,8 @@ words = ['strawberry', 'eclipse', 'chandelier', 'ketchup', 'toothpaste',
          'battery']
 
 print("\t\t\t\t Welcome to the Word Guess Game\n")
-print("\t\t To Play the Game please choose a letter and press enter!\n") 
-print("\t\t\t\t\t Have Fun\n")       
+print("\t\t To Play the Game please choose a letter and press Enter!\n") 
+print("\t\t\t\t\t Have Fun :)\n")       
 
 
 def word_guess_game():
@@ -32,7 +32,7 @@ def word_guess_game():
     # choose a random word
     guess = random.choice(words)
     # guess = "happy"
-    attempts = 8
+    attempts = 10
     correct_guess = []
 
     while attempts >= 1:
@@ -60,12 +60,16 @@ def word_guess_game():
         # decrease number of attempts when the letter is wrong        
         attempts -= 1
         # check if win
+        win = True
         for letter in guess:
             if letter not in correct_guess:
+                win = False
                 break
-            return print("Congratulations, You win")
+        if win:
+            print("Congratulations! You win")
+            return
     print("Sorry, You loose the Game")
-    print(f"The Word is {guess}.")       
+    print(f"The Word is {guess}.")      
 
 
 word_guess_game()
