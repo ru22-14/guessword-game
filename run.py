@@ -3,6 +3,7 @@ word guess game
 """
 
 import random
+from datetime import datetime
 
 emotions = ['love', 'hate', 'anger']
 animals = ['horse', 'lion', 'lizard']
@@ -11,9 +12,14 @@ country = ['germany', 'france', 'italy']
 
 hint = 'The word is'
 
+
 print("\t\t\t\t Welcome to the Word Guess Game\n")
 print("\t\t To Play the Game please choose a letter and press Enter!\n")
 print("\t\t\t\t\t Have Fun :)\n")
+
+now = datetime.now()
+dt_string = now.strftime("%d/%m/%Y %H:%M:%S\n")
+print("Date and Time =", dt_string)
 
 
 def get_user_data():
