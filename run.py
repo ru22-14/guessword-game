@@ -4,13 +4,33 @@ word guess game
 
 import random
 from datetime import datetime
+import gspread
+from google.oauth2.service_account import Credentials
+
+SCOPE = [
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/drive.file",
+    "https://www.googleapis.com/auth/drive",
+]
+
+"""
+Assign credentials from our API's and access our words spreadsheet
+"""
+CREDS = Credentials.from_service_account_file("creds.json")
+SCOPED_CREDS = CREDS.with_scopes(SCOPE)
+GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
+SHEET = GSPREAD_CLIENT.open("score-board")
+
+
+scoreboard = SHEET.worksheet("Sheet1")
 
 emotions = ['love', 'hate', 'anger']
 animals = ['horse', 'lion', 'lizard']
 birds = ['seagull', 'owl', 'parrot']
 country = ['germany', 'france', 'italy']
 
-hint = 'The word is'
+
+HINT = 'The word is'
 
 
 print("\t\t\t\t Welcome to the Word Guess Game\n")
@@ -29,8 +49,10 @@ def get_user_data():
     the function will print a message to the user to type again.
     """
     user_name = ""
+
     while True:
         user_name = input("Please enter your name: \n")
+        scoreboard.append_row([user_name])
 
         if not user_name.isalpha():
             print("Please type alphabates only.\n")
@@ -38,6 +60,8 @@ def get_user_data():
         else:
             print(f"Have fun and best of Luck {user_name}.\n")
             break
+        
+        # return user_name
 
 
 get_user_data()
@@ -49,14 +73,15 @@ def game_playover():
     the game again. if yes then the game will start again,
     if not then the game will exit. 
     """
-    user_choice = input('Hey would you like to play again? Please enter Y/N.\n').lower()
+    user_choice = input(
+            'Hey would you like to play again? Please enter Y/N.\n').lower()
     if user_choice == "y":
-        main_function()
+        game_function()
     else:
         exit()
 
 
-def main_function():
+def game_function():
     """
     The function will run and choose a random word from the list above.
     Then it will display the word in spaces and will ask the user to choose
@@ -67,15 +92,17 @@ def main_function():
 
     options = [emotions, animals, birds, country]
     choice = random.choice(random.choice(options))
+    scores = 0 
+    # username = get_user_data()
 
     if choice in options[0]:
-        print(f'HINT: {hint} an Emotion.')
+        print(f'HINT: {HINT} an Emotion.')
     elif choice in options[1]:
-        print(f'HINT: {hint} the name of an Animal.')
+        print(f'HINT: {HINT} the name of an Animal.')
     elif choice in options[2]:
-        print(f'HINT: {hint} the name of a Bird.')
+        print(f'HINT: {HINT} the name of a Bird.')
     elif choice in options[3]:
-        print(f'HINT: {hint} the name of a Country.')
+        print(f'HINT: {HINT} the name of a Country.')
     else:
         print("keep Trying")
 
@@ -119,12 +146,40 @@ def main_function():
         if win:
             print(
                 f'Congratulations! You guessed the right word "{choice}".\n')
+            scores += 5
+            print(f"\t\t\t\t\t\t\t\t Scores : {scores}")
+            scoreboard.append_row([scores])   
             game_playover()
-            return
+            return 
 
     print("Sorry, You loose the Game\n")
     print(f'The Word is "{choice}".')
+    print(f"\t\t\t\t\t\t\t\t Scores : {scores}")
     game_playover()
+    return scores
 
 
-main_function()
+game_function()
+
+
+# def score_sheet(user_name, totalscore):
+#     """
+#     function to add user name and user scores to gspread.
+#     """
+#     scoreboard.append_row([user_name, totalscore])
+#     print(f'{totalscore}')
+
+
+# def main_function():
+#     """
+#     function to call all functions
+#     """
+
+#     user_name = get_user_data()
+#     totalscore = game_function()
+#     score_sheet(user_name, totalscore)
+
+
+# main_function() 
+
+    
