@@ -37,6 +37,19 @@ def get_user_data():
 get_user_data()
 
 
+def game_playover():
+    """
+    this function will ask the user if he/she wants to play
+    the game again. if yes then the game will start again,
+    if not then the game will exit. 
+    """
+    user_choice = input('Hey would you like to play again? Please enter Y/N.\n').lower()
+    if user_choice == "y":
+        main_function()
+    else:
+        exit()
+
+
 def main_function():
     """
     The function will run and choose a random word from the list above.
@@ -100,11 +113,12 @@ def main_function():
         if win:
             print(
                 f'Congratulations! You guessed the right word "{choice}".\n')
-            # game_playOver()
+            game_playover()
             return
 
     print("Sorry, You loose the Game\n")
     print(f'The Word is "{choice}".')
+    game_playover()
 
 
 main_function()
