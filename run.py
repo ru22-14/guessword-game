@@ -1,3 +1,7 @@
+"""
+word guess game
+"""
+
 import random
 
 emotions = ['love', 'hate', 'anger']
@@ -12,13 +16,34 @@ print("\t\t To Play the Game please choose a letter and press Enter!\n")
 print("\t\t\t\t\t Have Fun :)\n")
 
 
+def get_user_data():
+    """
+    In this function we will get user name.
+    if the user types anything other then alphabates,
+    the function will print a message to the user to type again.
+    """
+    user_name = ""
+    while True:
+        user_name = input("Please enter your name: \n")
+
+        if not user_name.isalpha():
+            print("Please type alphabates only.\n")
+            continue
+        else:
+            print(f"Have fun and best of Luck {user_name}.\n")
+            break
+
+
+get_user_data()
+
+
 def main_function():
     """
-        The function will run and choose a random word from the list above.Then
-        it will display the word in spaces and will ask the user to choose a letter
-        and give it as a guess.Total number of attempts will be counted contniously
-        untill the word is been guessed or all the guesses are wrong. At the end,
-         the result will be displayed.
+    The function will run and choose a random word from the list above.
+    Then it will display the word in spaces and will ask the user to choose
+    a letter and give it as a guess.Total number of attempts will be counted
+    contniously untill the word is been guessed or all the guesses are wrong.
+    At the end, the result will be displayed.
     """
 
     options = [emotions, animals, birds, country]
@@ -80,7 +105,6 @@ def main_function():
 
     print("Sorry, You loose the Game\n")
     print(f'The Word is "{choice}".')
-
 
 
 main_function()
