@@ -186,7 +186,14 @@ def main_function():
   
     score_sheet(username, score_result)
 
+    def best_score():
 
+        bestscore = SHEET.worksheet('Sheet1').get_all_values()
+        for score in bestscore:
+            print(score)
+    return best_score()
+    
+        
 main_function() 
 
 
