@@ -48,26 +48,23 @@ def get_user_data():
     if the user types anything other then alphabates,
     the function will print a message to the user to type again.
     """
-    user_name = ""
+    user_name = " "
 
     while True:
         user_name = input("Please enter your name: \n")
-        scoreboard.append_row([user_name])
-
+        # scoreboard.append_row([user_name])
         if not user_name.isalpha():
             print("Please type alphabates only.\n")
             continue
         else:
-            print(f"Have fun and best of Luck {user_name}.\n")
             break
-        
-        # return user_name
+    return user_name
 
 
-get_user_data()
+# get_user_data()
 
 
-def game_playover():
+def play_again():
     """
     this function will ask the user if he/she wants to play
     the game again. if yes then the game will start again,
@@ -93,7 +90,6 @@ def game_function():
     options = [emotions, animals, birds, country]
     choice = random.choice(random.choice(options))
     scores = 0 
-    # username = get_user_data()
 
     if choice in options[0]:
         print(f'HINT: {HINT} an Emotion.')
@@ -109,6 +105,7 @@ def game_function():
     attempts = 10
     correct_guess = []
     while attempts >= 1:
+        
         # display the word to the user as '- - - - -'
         display_word = ''
         for letter in choice:
@@ -139,6 +136,7 @@ def game_function():
         attempts -= 1
         # check if win
         win = True
+        
         for letter in choice:
             if letter not in correct_guess:
                 win = False
@@ -147,39 +145,39 @@ def game_function():
             print(
                 f'Congratulations! You guessed the right word "{choice}".\n')
             scores += 5
+            # scoreboard.append_row([scores])
             print(f"\t\t\t\t\t\t\t\t Scores : {scores}")
-            scoreboard.append_row([scores])   
-            game_playover()
-            return 
+            play_again()
+            return scores
 
     print("Sorry, You loose the Game\n")
     print(f'The Word is "{choice}".')
     print(f"\t\t\t\t\t\t\t\t Scores : {scores}")
-    game_playover()
+    play_again()
     return scores
 
 
-game_function()
+# game_function()
 
 
-# def score_sheet(user_name, totalscore):
-#     """
-#     function to add user name and user scores to gspread.
-#     """
-#     scoreboard.append_row([user_name, totalscore])
-#     print(f'{totalscore}')
+def score_sheet(username, score_result):
+    """
+    function to add user name and user scores to gspread.
+    """
+    scoreboard.append_row([username, score_result])
+    print(username, score_result)
 
 
-# def main_function():
-#     """
-#     function to call all functions
-#     """
+def main_function():
+    """
+    function to call all functions
+    """
+    username = get_user_data()
+    score_result = game_function()
+    score_sheet(username, score_result)  
 
-#     user_name = get_user_data()
-#     totalscore = game_function()
-#     score_sheet(user_name, totalscore)
 
+main_function() 
 
-# main_function() 
 
     
