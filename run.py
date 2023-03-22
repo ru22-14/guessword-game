@@ -64,18 +64,18 @@ def get_user_data():
 # get_user_data()
 
 
-def play_again():
-    """
-    this function will ask the user if he/she wants to play
-    the game again. if yes then the game will start again,
-    if not then the game will exit. 
-    """
-    user_choice = input(
-            'Hey would you like to play again? Please enter Y/N.\n').lower()
-    if user_choice == "y":
-        game_function()
-    else:
-        exit()
+# def play_again():
+#     """
+#     this function will ask the user if he/she wants to play
+#     the game again. if yes then the game will start again,
+#     if not then the game will exit. 
+#     """
+#     user_choice = input(
+#             'Hey would you like to play again? Please enter Y/N.\n').lower()
+#     if user_choice == "y":
+#         game_function()
+#     else:
+#         exit()
 
 
 def game_function():
@@ -147,13 +147,13 @@ def game_function():
             scores += 5
             # scoreboard.append_row([scores])
             print(f"\t\t\t\t\t\t\t\t Scores : {scores}")
-            play_again()
+            # play_again()
             return scores
 
     print("Sorry, You loose the Game\n")
     print(f'The Word is "{choice}".')
     print(f"\t\t\t\t\t\t\t\t Scores : {scores}")
-    play_again()
+    # play_again()
     return scores
 
 
@@ -173,8 +173,18 @@ def main_function():
     function to call all functions
     """
     username = get_user_data()
-    score_result = game_function()
-    score_sheet(username, score_result)  
+    # score_result = game_function()
+    while True:
+        score_result = game_function()
+        user_choice = input(
+            'Hey would you like to play again? Please enter Y/N.\n').lower()
+        if user_choice == "y":
+            continue
+        else:
+            print("Good Bye")
+            break
+  
+    score_sheet(username, score_result)
 
 
 main_function() 
