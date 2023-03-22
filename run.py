@@ -68,7 +68,7 @@ def get_user_data():
 #     """
 #     this function will ask the user if he/she wants to play
 #     the game again. if yes then the game will start again,
-#     if not then the game will exit. 
+#     if not then the game will exit.
 #     """
 #     user_choice = input(
 #             'Hey would you like to play again? Please enter Y/N.\n').lower()
@@ -89,7 +89,7 @@ def game_function():
 
     options = [emotions, animals, birds, country]
     choice = random.choice(random.choice(options))
-    scores = 0 
+    scores = 0
 
     if choice in options[0]:
         print(f'HINT: {HINT} an Emotion.')
@@ -105,7 +105,7 @@ def game_function():
     attempts = 10
     correct_guess = []
     while attempts >= 1:
-        
+
         # display the word to the user as '- - - - -'
         display_word = ''
         for letter in choice:
@@ -136,15 +136,16 @@ def game_function():
         attempts -= 1
         # check if win
         win = True
-        
+        scores += 5
         for letter in choice:
             if letter not in correct_guess:
                 win = False
                 break
         if win:
+
             print(
                 f'Congratulations! You guessed the right word "{choice}".\n')
-            scores += 5
+            # scores += 5
             # scoreboard.append_row([scores])
             print(f"\t\t\t\t\t\t\t\t Scores : {scores}")
             # play_again()
@@ -173,9 +174,11 @@ def main_function():
     function to call all functions
     """
     username = get_user_data()
-    # score_result = game_function()
+    best_score = 0
     while True:
         score_result = game_function()
+        if score_result > best_score:
+            best_score = score_result
         user_choice = input(
             'Hey would you like to play again? Please enter Y/N.\n').lower()
         if user_choice == "y":
@@ -183,18 +186,10 @@ def main_function():
         else:
             print("Good Bye")
             break
-  
-    score_sheet(username, score_result)
-
-    def best_score():
-
-        bestscore = SHEET.worksheet('Sheet1').get_all_values()
-        for score in bestscore:
-            print(score)
-    return best_score()
-    
-        
-main_function() 
+    score_sheet(username, best_score)
+    all_rows = SHEET.worksheet('Sheet1').get_all_values()
+    for row in all_rows:
+        print(row)
 
 
-    
+main_function()
