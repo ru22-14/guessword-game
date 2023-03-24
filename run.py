@@ -86,7 +86,7 @@ def game_function():
         print(f'You have {attempts} attempts left\n')
 
         # choose a letter
-        make_a_choice = input('choose a letter: \n')
+        make_a_choice = input('choose a letter:\n')
 
         # replace the correct letter with '_'
 
