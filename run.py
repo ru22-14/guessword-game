@@ -34,7 +34,7 @@ def get_user_data():
     user_name = " "
 
     while True:
-        user_name = input("Please enter your name: \n")
+        user_name = input("Please enter your name:\n")
         if not user_name.isalpha():
             print("Please type alphabates only.\n")
             continue
