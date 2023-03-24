@@ -24,6 +24,23 @@ SHEET = GSPREAD_CLIENT.open("score-board")
 
 scoreboard = SHEET.worksheet("Sheet1")
 
+emotions = ['love', 'hate', 'anger', 'calm', 'cheerful',
+            'scared', 'annoyed', 'bored', 'excited', 'confident']
+animals = ['horse', 'lion', 'lizard', 'aligator', 'donkey',
+           'panda', 'ibex', 'koala', 'shark', 'zebra', 'bear']
+birds = ['seagull', 'owl', 'parrot', 'dove', 'falcon', 'raven',
+         'turkey', 'toucan', 'quail', 'pheasant', 'hawk']
+country = ['germany', 'france', 'italy', 'brazil', 'chile', 'lebanon',
+           'morocco', 'nigeria', 'pakistan', 'serbia', 'hungary']
+
+
+HINT = 'The word is'
+
+
+print("\t\t\t\t Welcome to the Word Guess Game\n")
+print("\t\t To Play the Game please choose a letter and press Enter!\n")
+print("\t\t\t\t\t Have Fun :)\n")
+
 
 def get_user_data():
     """
@@ -69,6 +86,7 @@ def game_function():
 
     attempts = 10
     correct_guess = []
+    guess = 0
     while attempts >= 1:
 
         # display the word to the user as '- - - - -'
@@ -76,6 +94,7 @@ def game_function():
         for letter in choice:
             if letter in correct_guess:
                 display_word += letter
+                
             else:
                 display_word += '_ '
             display_word += ' '
@@ -105,19 +124,19 @@ def game_function():
         # decrease number of attempts when the letter is wrong
 
         attempts -= 1
-
+        guess += 1
         # check if win
         win = True
-        scores = attempts * 5
         for letter in choice:
             if letter not in correct_guess:
                 win = False
                 scores = 0
                 break
         if win:
-
+            scores = (guess * 5)
             print(
                 f'Congratulations! You guessed the right word "{choice}".\n')
+            print(f'Total Guess: {guess}')    
             print(f"\t\t\t\t\t\t\t\t Scores : {scores}")
             return scores
 
@@ -153,27 +172,15 @@ def main_function():
             print("Good Bye")
             break
     score_sheet(username, best_score)
-    all_rows = SHEET.worksheet('Sheet1').get_all_values()
-    for row in all_rows:
-        print(row)
+    # all_rows = SHEET.worksheet('Sheet1').get_all_values()
+    
+    def leaderboard():
+        print('Leaderboard')
+        all_rows = SHEET.worksheet('Sheet1').get_all_values()
+        for row in all_rows:
+            print(row)
+    leaderboard()
 
-
-emotions = ['love', 'hate', 'anger', 'calm', 'cheerful',
-            'scared', 'annoyed', 'bored', 'excited', '']
-animals = ['horse', 'lion', 'lizard', 'aligator', 'donkey',
-           'panda', 'ibex', 'koala', 'shark', 'zebra', 'bear']
-birds = ['seagull', 'owl', 'parrot', 'dove', 'falcon', 'raven',
-         'turkey', 'toucan', 'quail', 'pheasant', 'hawk']
-country = ['germany', 'france', 'italy', 'brazil', 'chile', 'lebanon',
-           'morocco', 'nigeria', 'pakistan', 'serbia', 'hungary']
-
-
-HINT = 'The word is'
-
-
-print("\t\t\t\t Welcome to the Word Guess Game\n")
-print("\t\t To Play the Game please choose a letter and press Enter!\n")
-print("\t\t\t\t\t Have Fun :)\n")
 
 now = datetime.now()
 dt_string = now.strftime("%d/%m/%Y %H:%M:%S\n")
