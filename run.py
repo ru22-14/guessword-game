@@ -35,7 +35,6 @@ def get_user_data():
 
     while True:
         user_name = input("Please enter your name: \n")
-        
         if not user_name.isalpha():
             print("Please type alphabates only.\n")
             continue
@@ -81,15 +80,20 @@ def game_function():
                 display_word += '_ '
             display_word += ' '
         print(display_word.strip())
+
         # display the total number of attempts
 
         print(f'You have {attempts} attempts left\n')
+
         # choose a letter
         make_a_choice = input('choose a letter: \n')
+
         # replace the correct letter with '_'
+
         correct_guess.append(make_a_choice)
 
         # display if the letter is correct/ wrong
+
         if make_a_choice in choice:
             print('correct letter\n')
         elif make_a_choice.isnumeric():
@@ -99,7 +103,9 @@ def game_function():
             print("This letter is not in the Word\n")
 
         # decrease number of attempts when the letter is wrong
+
         attempts -= 1
+
         # check if win
         win = True
         scores = attempts * 5
@@ -112,20 +118,13 @@ def game_function():
 
             print(
                 f'Congratulations! You guessed the right word "{choice}".\n')
-            # scores += 5
-            # scoreboard.append_row([scores])
             print(f"\t\t\t\t\t\t\t\t Scores : {scores}")
-            # play_again()
             return scores
 
     print("Sorry, You loose the Game\n")
     print(f'The Word is "{choice}".')
     print(f"\t\t\t\t\t\t\t\t Scores : {scores}")
-    # play_again()
     return scores
-
-
-# game_function()
 
 
 def score_sheet(username, score_result):
