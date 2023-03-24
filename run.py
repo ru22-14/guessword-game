@@ -24,23 +24,6 @@ SHEET = GSPREAD_CLIENT.open("score-board")
 
 scoreboard = SHEET.worksheet("Sheet1")
 
-emotions = ['love', 'hate', 'anger']
-animals = ['horse', 'lion', 'lizard']
-birds = ['seagull', 'owl', 'parrot']
-country = ['germany', 'france', 'italy']
-
-
-HINT = 'The word is'
-
-
-print("\t\t\t\t Welcome to the Word Guess Game\n")
-print("\t\t To Play the Game please choose a letter and press Enter!\n")
-print("\t\t\t\t\t Have Fun :)\n")
-
-now = datetime.now()
-dt_string = now.strftime("%d/%m/%Y %H:%M:%S\n")
-print("Date and Time =", dt_string)
-
 
 def get_user_data():
     """
@@ -52,30 +35,13 @@ def get_user_data():
 
     while True:
         user_name = input("Please enter your name: \n")
-        # scoreboard.append_row([user_name])
+        
         if not user_name.isalpha():
             print("Please type alphabates only.\n")
             continue
         else:
             break
     return user_name
-
-
-# get_user_data()
-
-
-# def play_again():
-#     """
-#     this function will ask the user if he/she wants to play
-#     the game again. if yes then the game will start again,
-#     if not then the game will exit.
-#     """
-#     user_choice = input(
-#             'Hey would you like to play again? Please enter Y/N.\n').lower()
-#     if user_choice == "y":
-#         game_function()
-#     else:
-#         exit()
 
 
 def game_function():
@@ -136,10 +102,11 @@ def game_function():
         attempts -= 1
         # check if win
         win = True
-        scores += 5
+        scores = attempts * 5
         for letter in choice:
             if letter not in correct_guess:
                 win = False
+                scores = 0
                 break
         if win:
 
@@ -190,6 +157,28 @@ def main_function():
     all_rows = SHEET.worksheet('Sheet1').get_all_values()
     for row in all_rows:
         print(row)
+
+
+emotions = ['love', 'hate', 'anger', 'calm', 'cheerful',
+            'scared', 'annoyed', 'bored', 'excited', '']
+animals = ['horse', 'lion', 'lizard', 'aligator', 'donkey',
+           'panda', 'ibex', 'koala', 'shark', 'zebra', 'bear']
+birds = ['seagull', 'owl', 'parrot', 'dove', 'falcon', 'raven',
+         'turkey', 'toucan', 'quail', 'pheasant', 'hawk']
+country = ['germany', 'france', 'italy', 'brazil', 'chile', 'lebanon',
+           'morocco', 'nigeria', 'pakistan', 'serbia', 'hungary']
+
+
+HINT = 'The word is'
+
+
+print("\t\t\t\t Welcome to the Word Guess Game\n")
+print("\t\t To Play the Game please choose a letter and press Enter!\n")
+print("\t\t\t\t\t Have Fun :)\n")
+
+now = datetime.now()
+dt_string = now.strftime("%d/%m/%Y %H:%M:%S\n")
+print("Date and Time =", dt_string)
 
 
 main_function()
