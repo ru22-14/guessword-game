@@ -63,9 +63,9 @@ def get_user_data():
 def game_function():
     """
     The function will run and choose a random word from the list above.
-    Then it will display the word in spaces with a hint and will ask the 
+    Then it will display the word in spaces with a hint and will ask the
     user to choosea letter and give it as a guess.Total number of attempts
-    will be counted contniously untill the word is been guessed or all the 
+    will be counted contniously untill the word is been guessed or all the
     guesses are wrong.Number of guesses will increase with each guess.
     At the end, the result will be displayed.
     """
@@ -157,13 +157,13 @@ def score_sheet(username, score_result):
 def main_function():
     """
     In this function all the functions will be called and executed.
-    After each win or loose the user will be asked to play again 
-    or leave the game. If the user chooses 'y' which is yes then the 
-    game will start again and bring a new random word to guess, if 
-    the user chooses 'n' which is no, the game will end and show 
-    the scores multiplied with the number of guesses user has made 
+    After each win or loose the user will be asked to play again
+    or leave the game. If the user chooses 'y' which is yes then the
+    game will start again and bring a new random word to guess, if
+    the user chooses 'n' which is no, the game will end and show
+    the scores multiplied with the number of guesses user has made
     and the Leaderboard. The Leaderboard will add and display the name
-    and the best scores of the user.  
+    and the best scores of the user.
     """
     username = get_user_data()
     best_score = 0
