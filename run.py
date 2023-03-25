@@ -173,10 +173,12 @@ def main_function():
     score_sheet(username, best_score)
 
     def leaderboard():
-        print('Leaderboard')
+        print('You can see your best scores on Leaderboard\n')
+        print('LEADERBOARD\n')
         all_rows = SHEET.worksheet('Sheet1').get_all_values()
         for row in all_rows:
             print(row)
+        
     leaderboard()
 
 
