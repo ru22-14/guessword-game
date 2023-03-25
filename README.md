@@ -11,6 +11,8 @@ The random word is choosen from different lists created in the code.
 
 ## Inspiration
 
+I used to play this game with my husband and kids on weekends and we used to have a lot of fun playing it. The kids were happy when they won and they were at the same time learning new words and increasing their English vocabulary. It was the first thing that i had in my mind for my Python project and i enjoyed a lot working on it. My husband and kids have played it after i was finished implementing it and they find it quite intriguing.
+
 ## Basic Information
 The purpose of this game is a simple word guess game for entertainment purposes in a termminal environment using Python.
 
