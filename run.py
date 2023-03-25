@@ -94,7 +94,6 @@ def game_function():
         for letter in choice:
             if letter in correct_guess:
                 display_word += letter
-                
             else:
                 display_word += '_ '
             display_word += ' '
@@ -133,7 +132,7 @@ def game_function():
                 scores = 0
                 break
         if win:
-            scores = (guess * 5)
+            scores = guess * 5
             print(
                 f'Congratulations! You guessed the right word "{choice}".\n')
             print(f'Total Guess: {guess}')    
@@ -151,7 +150,7 @@ def score_sheet(username, score_result):
     function to add user name and user scores to gspread.
     """
     scoreboard.append_row([username, score_result])
-    print(username, score_result)
+    print(f'{username} your best scores are: {score_result}')
 
 
 def main_function():
@@ -172,8 +171,7 @@ def main_function():
             print("Good Bye")
             break
     score_sheet(username, best_score)
-    # all_rows = SHEET.worksheet('Sheet1').get_all_values()
-    
+
     def leaderboard():
         print('Leaderboard')
         all_rows = SHEET.worksheet('Sheet1').get_all_values()
