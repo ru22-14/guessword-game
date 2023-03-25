@@ -178,7 +178,6 @@ def main_function():
         all_rows = SHEET.worksheet('Sheet1').get_all_values()
         for row in all_rows:
             print(row)
-        
     leaderboard()
 
 
