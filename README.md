@@ -1,88 +1,87 @@
 # Word Guess Game
-A unique Word Guess Game written in Python and played in terminal.
+A unique Word Guess Game written in Python and played in the terminal.
 
 - ![this is an image](./assets/images/game-display.png)
 
 ## Introduction
-This simple game displays a secret word that only reveals the length of the word through underscores to represent a letter. A hint will be given to user about the word. You have 10 attempts to guess the word before you run out of lives.
-On winning the game the scores will be calculated (5 * with number of guess). The highest Score will be added to the Scoreboard. In case of loosing the game, score will be displayed but will not be added to Scoreboard.
+This game displays a secret word that reveals the length of the word through underscores to represent a letter. A hint is given to the user about the word. The user has 10 attempts to guess the word before he/she runs out of the attempts. As the number of attempts descrease, the number of guesses increases. On winning the game the scores are calculated (5 * with number of guesses) because when someone succeeds every attempt matters. So every guess will be rewarded. The highest score is added to the Scoreboard in the google spreadscheet. In case of loosing the game, the score is displayed and is not added to the Scoreboard.
 
-The random word is choosen from different lists created in the code.
+The random word is chosen from different lists defined in the project.
 
 ## Inspiration
 
 I used to play this game with my husband and kids on weekends and we used to have a lot of fun playing it. The kids were happy when they won and they were at the same time learning new words and increasing their English vocabulary. It was the first thing that i had in my mind for my Python project and i enjoyed a lot working on it. My husband and kids have played it after i was finished implementing it and they find it quite intriguing.
 
 ## Basic Information
-The purpose of this game is a simple word guess game for entertainment purposes in a termminal environment using Python.
+The purpose of this game is a simple word guess game for entertainment purposes in a terminal environment using Python.
 
-The game is designed keeping user experience in mind:
+The game is designed keeping the user experience in mind:
 
-- User wants to enjoy playing word game.
-- user wants to get a hint about the word.
-- User wants to win the game and get winning message and scores display when it is achieved.
-- User wants to have clear instructions.
-- user wants to get rewarded on each guess if wins.
-- Provides clear error messages to help the user input the correct values expected.
-- User wants the highest scores to be added to the scoreboard.
+- The user wants to enjoy playing the word game.
+- The user wants to get a hint about the word.
+- The user wants to win the game and get a winning message and scores to be displayed when he/she   
+  wins.
+- The user wants to have clear instructions.
+- The user wants to get rewarded on each guess if he/she wins.
+- It provides clear error messages to help the user enter valid input.
+- The user wants the highest scores to be available in the scoreboard.
 
 ## Features
 - Welcome 
-  - The game starts and displayes a welcome message, an instruction to the user and also displays 
+  - The game starts and displays a welcome message, an instruction to the user and also displays 
     date and time. Then the user is asked to enter his/her name.
 
 - ![this is an image](./assets/images/game-start.png)
 
 - Game Start
-  - Game starts when user types his/her name and press enter in order to start playing. A random 
-    word displays to the user with a Hint. Now the user needs to guess the word. Total number of attempts are 10.  
+  - Game starts when the user types his/her name and then presses enter in order to start playing.  
+    A random word is displayed to the user with a Hint. Now the user needs to guess the word. The total number of attempts are 10 and are displayed to the user.  
 
 - ![this is an image](./assets/images/play-game.png)
 
 - End
-  - If the user successfully guesses the word or fails to guess, a message will be displayed to the 
-    user to play again or not.
+  - In case the user is able to successfully guess the word or fails to guess it, a message will be 
+    displayed to the user asking him/her to play again or not.
 
 - ![this is an image](./assets/images/end-game.png)
 
 - Leaderboard
-  - After exiting the game the user's score will be displayed along with a Leaderboard.
-    The Leaderbord shows only the highest score of the user as everyone wants to see the best
-    one has done :)
+  - After exiting the game the user's score is displayed along with a Leaderboard.
+    The Leaderbord shows only the recent score of the user as everyone wants to see his/her best results :)
 
 - ![this is an image](./assets/images/leader-board.png)
 
 - Score-board
-  - Once finishing the game the highest scores will be added to the score-board on            
-    Google-spreadsheet i created. 
+  - Once the game is finished the highest scores is added to the scoreboard in the           
+    google spreadsheet. 
 
 - ![this is an image](./assets/images/gspread-scoreboard.png)
 
 - Loose
-  - If the user fails to guess the word and loose the game the score will display on the 
-    Leaderboard but will not be added to the Scoreboard.
+  - In case the user fails to guess the word and loose the game the score is displayed on the 
+    Leaderboard but is not added to the Scoreboard.
 
 - ![this is an image](./assets/images/score-loose.png)
 
 ## Testing
 
-Tested and validated the code and user input in Heroku terminal. In case a user inputs digits or  
-empty space or couple of letters together a message will be displayed to the user.
+Tested and validated the code and user input in Heroku terminal. In case a user inputs digits,  
+empty space or couple of letters together a message will be displayed to the user saying that the input is not valid.
 - ![this is an image](./assets/images/input-screenshot.png)
 
 - ![this is an image](./assets/images/wrong-inputs.png)
 
 ## Validator Testing
 
-No errors or problems are showing in Gitpod terminal.
+There are no errors or problems being displayed in the Gitpod terminal.
 
 - ![this is an image](./assets/images/validation-screenshot.png)
 
 ### Bugs or Errors
 
-- I found a bug in score calculation which i tried my best to solve but i couldnt and the display
-  of the name and score on gspread wasn't in the right order. So my Mentor helped me to solve these issues and improving my code. 
-- I forgot to validate user input and got advise from my mentor to add it as well :) 
+- I found a bug in the score calculation which i tried my best to solve but i couldnt and the 
+  display of the name and score on gspread wasn't in the right order. My Mentor helped me to resolve these issues and also gave me suggestions to improve my code. 
+- I forgot to validate the user input and was advised from my mentor to add it as well :) 
 
 ## Language and Technologies
 
@@ -101,11 +100,11 @@ No errors or problems are showing in Gitpod terminal.
 
 I followed the steps written below to deploy my project to [Heroku](https://heroku.com/), based on the [Code Institute](https://codeinstitute.net/) instructions:
 
-- First created account on Heroku by flollowing the instructions given from Code Institute.
+- First created a Heroku account by flollowing the instructions given from Code Institute.
 
-- pip3 freeze > requirements.txt to install our dependencies to Heroku.
+- used the `pip3 freeze > requirements.txt` command to install our dependencies to Heroku.
 - Commit changes push the changes to Github:
-  git commit -m "Add requirements for deployment”
+  `git commit -m "Add requirements for deployment”`
 
 In HEROKU after creating the account:
 
@@ -123,13 +122,13 @@ In HEROKU after creating the account:
 - Press Add-button.
 
 - Scroll down to Buildpacks and press the icon for Python, click Save Changes, then press the icon  
-  for Nodejs and save changes. These Buildpacks need to be same as in the order below:
+  for Nodejs and save changes. These Buildpacks need to be in the same order as below:
 
   -  Python 
   -  NodeJS
 
-- Go to Deploy section tab and scroll down to Deployment Method.I connect to Github pages and then
-  could search for my Github Repository "guessword-game" and then click connect.
+- Go to Deploy section tab and scroll down to the Deployment Method.I connect to Github pages and 
+  then could search for my Github Repository "guessword-game" and then click connect.
 
 - Scroll down to Automatic and Manual Deploys sections. I clicked on Manual Deployment.
 
@@ -148,10 +147,12 @@ In HEROKU after creating the account:
   and data to create different lists of words. 
 - [stackoverflow](https://stackoverflow.com/) to learn how to validate user input data.
 - README inspiration from sample README Codeinstitute
+- Game tested by my husband and my daughter.
+- Proofreading for the README done by my husband.
 
 ## Content
 
 - Code institute for the READ.md layout.
 - [Stackoverflow](https://stackoverflow.com/) for input validation and date and time display.
-- [youtube](https://youtube.com/) to add scores in game.
+- [youtube](https://youtube.com/) to add the scores in the game.
 - [google](https://google.com/) to create lists of emotions, animal, birds and country names.
