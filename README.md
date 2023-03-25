@@ -12,4 +12,7 @@
 ## Deployement
 ## Credits
 ## Content
-## 
+- Code institute for the READ.md layout.
+- [Stackoverflow](https://stackoverflow.com/) for input validation and date and time display.
+- [youtube](https://youtube.com/) to add scores in game.
+- [google](https://google.com/) to create lists of emotions, animal, birds and country names.
