@@ -110,16 +110,20 @@ def game_function():
         # replace the correct letter with '_'
 
         correct_guess.append(make_a_choice)
-
+        print(correct_guess)
         # display if the letter is correct/ wrong
 
-        if make_a_choice in choice:
-            print('correct letter\n')
-        elif make_a_choice.isnumeric():
-
-            print("please enter alphabates only")
+        if make_a_choice.isalpha():
+            if make_a_choice in choice:
+                print('Correct letter, Good job!\n')
+            elif len(make_a_choice) > 1:
+                print("Enter one letter at a time")
+            elif make_a_choice == correct_guess:
+                print('You already have guessed the letter')
+            elif make_a_choice not in choice:
+                print('Wrong guess')
         else:
-            print("This letter is not in the Word\n")
+            print("invalid input, please type alphabates only\n")
 
         # decrease number of attempts when the letter is wrong
 
@@ -195,3 +199,5 @@ print("Date and Time =", dt_string)
 
 
 main_function()
+
+
