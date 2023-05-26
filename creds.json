@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "guessword-game-381310",
+  "private_key_id": "84ef81d974383910de81b2f69e62c9a786594676",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDeW+y2plFYQ4O7\nhdlf/qOPcqgyzm/61PE2suFFOAyRPiN0QpCz3qXmtYRiAh51zzHjxDvKYhYTNRNy\nR9hq6zAq5c5MElio/Ga0KHSWGwJnw4Ew0s0Pn6tjBf5CCwFzQNvO1shv/9MQt6SJ\niPYIRbdD+n1UlJODgDU2o+ICdeIkxddDA4c33nznC/+byu2MdqGDKiYce486dfUw\nWp77G8gm59hrWhCHld3AqqqZhx5mLO1I0j5HVGm4xZNtvmL9w5fhkvAOR+9Srdrw\nzlEQj7L1F+aSBwj7Zla6fpGJuMnmidXvDElZXaydO2WdPVj2zeqsq0AAYOAJ68En\nlwNsiBYZAgMBAAECggEAC2esSqNZcW0u3HA2Tw+bgu8NJGQzYCqKWL/+gNbxAoU7\nSWpIL0/XpP3THI7pQ/CJN8UrdUCEruWFeCfi/3uUd3Jc8MjRcq3j9HQUh6mQGXcN\nFMAc+uoO3uqXqsGFFr6YVdjQ1fI7TfgYC2LEcgRl13De3sxHqKtdVnkfafkdsGf0\ncaVh2k36L8U5NemTzhnn0tWWCan9oEP9X8kOa94GPPc1bV2wMWipU74MMO9UwpMn\nrXTte6UZ/soz1r51bBoOkYswcIlf3a0hK9Si6dDYY9+bdU1DEL6Jfq2k1sK70A/S\n1VxI016vjom/h0qZsK2FUQ8lp7VrxIzGIk/qK2TNhQKBgQD01Sywmr3Ic+XZqGZy\nkGlFJMkpMWv3xYbipp3SO2emBIhRTNxOGxPK0TWC3D5vmHiFMAVLJgtkdNkSoa4P\nefUKvl3lGpnWlq+1rVqsK4GV0Zb/nx99i5JJNyBPxandO7sfdCV6bWAlYXsdCGck\nmiVVSE7Tlh4IHU0jkOtPajhN1wKBgQDogFVZYAUXBGJqdPyfbevswhbCxh0gKEW1\nR2NkTNLmyGNsmzY/QYP0qVsDRzDx4Vn2eUWQEqkmi8sQdcegD71j4coK3N0j0M8+\nd10YdZQea8KvhXqI9P2kX6o/kZtS+sRWhAo9xkuuHbRug23aWQMk3OZ8QiduxQTE\nZaWVEu7djwKBgQDiJH1Q6r1dh9/IuclXDJiPqzi7edDWXXcHpwqjgwdry0f2gF4F\nLvGLJs6cfr6U6Wp46zAYh52CPoO6t+hEl0uFjuy/j2CFW04VK3hTCyR4s80bc2js\n15xZUDfiNxt9I4zlsqxjdt+V54KGAJr0rgTJzy4wNbqrmBUGQvd2tRAopQKBgHi2\nOJngmoPqyNYQyyBTR8xysLKLfY+2mQqXd+kZYd5kaAp5Q17wOvyJ+TDog2bx421u\nZUl6Bsx2hAWVwQE/assy7V1aco4n2ZHLE1ChqzdoJ3pNyOLWn+H5sUCz7nrUq59n\nipGsJJrP3WALaLuWv2UiM6CMEEEYlXMKez+8xrvNAoGBAODWf46SIumBX0YqeAf5\nZf6zERzHHDEIL3lRiR+LKNhZrusQAADrxJCLwGq+Lo7h0BYoiN5yS+RoN+/GE7tb\ncKFD7FCTStNKQ/qLsIEyWE4ZHWYNDNGyScX+r3j3bCkYffnrFiQivFyNd2FVB9jT\nzcJ3jOPgCqZklGx87u2WBBPG\n-----END PRIVATE KEY-----\n",
+  "client_email": "guessword-game@guessword-game-381310.iam.gserviceaccount.com",
+  "client_id": "109550797717098057116",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/guessword-game%40guessword-game-381310.iam.gserviceaccount.com"
+}

@@ -88,6 +88,8 @@ def game_function():
     attempts = 10
     correct_guess = []
     guess = 0
+    all_guesses = []
+
     while attempts >= 1:
 
         # display the word to the user as '- - - - -'
@@ -98,6 +100,7 @@ def game_function():
             else:
                 display_word += '_ '
             display_word += ' '
+        print("Guess the word:\n")
         print(display_word.strip())
 
         # display the total number of attempts
@@ -110,39 +113,45 @@ def game_function():
         # replace the correct letter with '_'
 
         correct_guess.append(make_a_choice)
-        print(correct_guess)
+        # print(correct_guess)
         # display if the letter is correct/ wrong
-
-        if make_a_choice.isalpha():
-            if make_a_choice in choice:
-                print('Correct letter, Good job!\n')
-            elif len(make_a_choice) > 1:
-                print("Enter one letter at a time")
-            elif make_a_choice == correct_guess:
-                print('You already have guessed the letter')
-            elif make_a_choice not in choice:
-                print('Wrong guess')
+        valid_guess = True
+        if not make_a_choice.isalpha():
+            print("invalid input!!! please type elphabates only.\n ")
+            valid_guess = False
         else:
-            print("invalid input, please type alphabates only\n")
+            if len(make_a_choice) > 1:
+                print("Enter one letter at a time")
+                valid_guess = False
+            elif make_a_choice in all_guesses and guess:
+                print("You already have tried the letter")
+                valid_guess = False
+            elif make_a_choice in choice:
+                print('Correct Letter, Good job!!!')
+                correct_guess.append(make_a_choice)
+            elif make_a_choice not in choice:
+                print('wrong guess')
 
         # decrease number of attempts when the letter is wrong
 
-        attempts -= 1
-        guess += 1
+        if valid_guess:
+            all_guesses.append(make_a_choice)
+            attempts -= 1
+            guess += 1
         # check if win
-        win = True
-        for letter in choice:
-            if letter not in correct_guess:
-                win = False
-                scores = 0
-                break
-        if win:
-            scores = guess * 5
-            print(
-                f'Congratulations! You guessed the right word "{choice}".\n')
-            print(f'Total Guess: {guess}')
-            print(f"\t\t\t\t\t\t\t\t Scores : {scores}")
-            return scores
+            win = True
+            for letter in choice:
+                if letter not in correct_guess:
+                    win = False
+                    scores = 0
+                    break
+            if win:
+                scores = guess * 5
+                print(
+                    f'Well Done!You guessed the right word "{choice}".\n')
+                print(f'Total Guess: {guess}')
+                print(f"\t\t\t\t\t\t\t\t Scores : {scores}")
+                return scores
 
     print("Sorry, You loose the Game\n")
     print(f'The Word is "{choice}".')
@@ -198,6 +207,4 @@ dt_string = now.strftime("%d/%m/%Y %H:%M:%S\n")
 print("Date and Time =", dt_string)
 
 
-main_function()
-
-
+main_function()   
