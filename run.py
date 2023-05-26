@@ -121,16 +121,16 @@ def game_function():
             valid_guess = False
         else:
             if len(make_a_choice) > 1:
-                print("Enter one letter at a time")
+                print("Enter one letter at a time.\n")
                 valid_guess = False
             elif make_a_choice in all_guesses and guess:
-                print("You already have tried the letter")
+                print("You already have tried the letter.\n")
                 valid_guess = False
             elif make_a_choice in choice:
-                print('Correct Letter, Good job!!!')
+                print('Correct Letter, Good job!!!\n')
                 correct_guess.append(make_a_choice)
             elif make_a_choice not in choice:
-                print('wrong guess')
+                print('wrong guess\n')
 
         # decrease number of attempts when the letter is wrong
 
@@ -149,13 +149,13 @@ def game_function():
                 scores = guess * 5
                 print(
                     f'Well Done!You guessed the right word "{choice}".\n')
-                print(f'Total Guess: {guess}')
-                print(f"\t\t\t\t\t\t\t\t Scores : {scores}")
+                print(f'Total Guess: {guess}.\n')
+                print(f"\t\t\t\t\t\t\t\t Scores : {scores}.\n")
                 return scores
 
     print("Sorry, You loose the Game\n")
-    print(f'The Word is "{choice}".')
-    print(f"\t\t\t\t\t\t\t\t Scores : {scores}")
+    print(f'The Word is "{choice}".\n')
+    print(f"\t\t\t\t\t\t\t\t Scores : {scores}\n")
     return scores
 
 
@@ -164,7 +164,7 @@ def score_sheet(username, score_result):
     function to add user name and user scores to gspread.
     """
     scoreboard.append_row([username, score_result])
-    print(f'{username} your best scores are: {score_result}')
+    print(f'{username} your best scores are: {score_result}\n')
 
 
 def main_function():
