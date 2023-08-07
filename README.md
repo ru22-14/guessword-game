@@ -65,11 +65,76 @@ The game is designed keeping the user experience in mind:
 
 ## Testing
 
-Tested and validated the code and user input in Heroku terminal. In case a user inputs digits,  
+- Tested and validated the code and user input in Heroku terminal. In case a user inputs digits,  
 empty space or couple of letters together a message will be displayed to the user saying that the input is not valid.
-- ![this is an image](./assets/images/input-screenshot.png)
 
-- ![this is an image](./assets/images/wrong-inputs.png)
+<details>
+
+- The Guess Word game displays to the player in the the terminal. Player needs to input his/her name, then press enter in order to start the game. A hint about the word and total number of attempts always displays to the player..  
+<summary>Game Start</summary>
+<img src="./assets/images/game-img.jpg" ><br>
+</details> 
+
+<details>
+
+- Whenever the player inputs a correct guess the letter displays on the right place in the word, a success message and remaining number of attempts also displays to the player. 
+<summary>Correct Guess</summary>
+<img src="./assets/images/correct-guess.jpg" ><br>
+</details> 
+
+<details>
+
+- When the player inputs a wrong guess, a warning message and remaining number of attempts displays to the player. On each wrong guess player looses 1 remaining number of attempts.  
+<summary>Wrong Guess</summary>
+<img src="./assets/images/wrong-guess.jpg" ><br>
+</details>
+
+<details>
+
+- When the player enters invalid inputs such as numbers, spacial characters, empty input, space or multiple letters, a warning message regarding invalid input displays to the player. There is no deduction of attempts on invalid inputs.
+<summary>Invalid Input</summary> <br><br>
+
+  - Number Input
+  <img src="./assets/images/wrong-input-num.jpg" ><br><br>
+  
+  - Special Characters Input
+  <img src="./assets/images/special-char-input.jpg" ><br><br>
+
+  - Space Input
+  <img src="./assets/images/space-input.jpg" ><br><br>
+
+  - Repeating Input
+  <img src="./assets/images/repeat-img.png" ><br><br>
+
+  - Multiple Letters Input
+  <img src="./assets/images/multiple-letters.jpg" ><br><br>
+
+  - Empty Input
+  <img src="./assets/images/empty-input.jpg" ><br>
+</details>
+
+<details>
+
+- If player fails to guess the word a related message displays to the user along with the WORD. Then the player is asked if he/she wants to continue to play or end the game. If player choose "Y" then the game restarts, if the player chooses "N" then the game ends and displays the leaderboard to the player.  
+<summary>Loose Game</summary>
+<img src="./assets/images/game-loose.jpg" ><br>
+</details> 
+
+<details>
+
+- When player successfully guess the word a related message displays to the user as well as the WORD. Then the player is asked if he/she wants to continue to play or end the game. If player choose "Y" then the game restarts, if the player chooses "N" then the game ends and displays the leaderboard to the player.  
+<summary>Win Game</summary>
+<img src="./assets/images/game-win.jpg" ><br>
+</details> 
+
+<details>
+
+- On winning or loosing the game, player is asked if he/she wants to continue to play or end the game. If player choose "Y" then the game restarts, if the player chooses "N" then the game ends and displays the leaderboard to the player. Always the best scores displays on the Leaderboard. 
+<summary>Leaderboard</summary>
+<img src="./assets/images/leader-board.jpg" ><br>
+</details>
+
+
 
 ## Validator Testing
 
