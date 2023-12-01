@@ -1,5 +1,5 @@
 <h1 align="center">Word Guess Game</h1> 
-A unique Word Guess Game written in Python and played in the terminal.
+<h3 align="center">A unique Word Guess Game written in Python and played in the terminal.</h3>
 
 - ![this is an image](./assets/images/game-display.png)
 
