@@ -1,7 +1,9 @@
 <h1 align="center">Word Guess Game</h1> 
 <h3 align="center">A unique Word Guess Game written in Python and played in the terminal.</h3>
 
-- ![this is an image](./assets/images/game-display.png)
+![this is an image](./assets/images/game-display.png)
+
+[Play the Game](https://guessword-game.herokuapp.com/)
 
 ## Introduction
 This game displays a secret word that reveals the length of the word through underscores to represent a letter. A hint is given to the user about the word. The user has 10 attempts to guess the word before he/she runs out of the attempts. As the number of attempts descrease, the number of guesses increases. On winning the game the scores are calculated (5 * with number of guesses) because when someone succeeds every attempt matters. So every guess will be rewarded. The highest score is added to the Scoreboard in the google spreadscheet. In case of loosing the game, the score is displayed and is not added to the Scoreboard.
